@@ -19,7 +19,9 @@ int count(std::complex<double> c, int maxIter, ComplexFunction func) {
 
 int main() {
 
-    ComplexFunction mandelbrot = [](std::complex<double> z) {
+    //USER DEFINED:
+    ComplexFunction fractal = [](std::complex<double> z) {
+        //in this case, mandelbrot
         return z * z;
     };
 
@@ -28,6 +30,7 @@ int main() {
     const int maxIter = 255;
     const double scale = 3.0 / height; // Adjust scale factor as needed
 
+    //DO NOT CHANGE:
     sf::RenderWindow window(sf::VideoMode(width, height), "Mandelbrot Set");
 
     while (window.isOpen()) {
@@ -45,7 +48,7 @@ int main() {
                 //re in [-width/2, width/2]*scale
                 //im in [-height/2, height/2]*scale
                 std::complex<double> c ((x - width / 2) * scale,(y - height / 2) * scale);
-                int iter = count(c, maxIter, mandelbrot);
+                int iter = count(c, maxIter, fractal);
 
                 //plot:
                 sf::Color color(255 * iter / maxIter, 255 * iter / maxIter, 255 * iter / maxIter);
