@@ -1,3 +1,6 @@
+//compile with:
+//g++ -o mandelbrot mandelbrot.cpp -lsfml-graphics -lsfml-window -lsfml-system
+
 #include <SFML/Graphics.hpp>
 #include <complex>
 
